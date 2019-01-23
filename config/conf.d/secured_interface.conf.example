@@ -1,0 +1,14 @@
+# Dist TCP access
+listener 8883
+protocol mqtt
+#cafile /etc/mosquitto/ca_certificates/ca.crt
+certfile /etc/mosquitto/certs/server.crt
+keyfile /etc/mosquitto/certs/server.key
+
+# Dist WS access
+listener 9002
+protocol websockets
+#cafile /etc/mosquitto/ca_certificates/ca.crt
+certfile /etc/mosquitto/certs/server.crt
+keyfile /etc/mosquitto/certs/server.key
+

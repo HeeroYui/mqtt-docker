@@ -1,0 +1,17 @@
+version: "2"
+services:
+  mqtt:
+    image: eclipse-mosquitto:latest
+    restart: always
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    ports:
+      - "1883:1883"
+      - "8883:8883"
+      - "9001:9001"
+      - "9002:9002"
+    volumes:
+      - ./config:/mosquitto/config:ro
+      - ./data:/mosquitto/data:rw
+      - ./log:/mosquitto/log:rw
